@@ -8,9 +8,9 @@ class CarMake(models.Model):
     country = models.TextField()
     foundedYear = models.IntegerField(default=2025,
                                       validators=[
-                                        MaxValueValidator(2026), 
+                                        MaxValueValidator(2026),
                                         MinValueValidator(1900)
-                                    ])
+                                        ])
 
     def __str__(self):
         return self.name  # Return the name as the string representation
@@ -29,16 +29,16 @@ class CarModel(models.Model):
         ('HATCH', 'Hatchback'),
     ]
     type = models.CharField(max_length=10, choices=CAR_TYPES, default='SUV')
-    year = models.IntegerField(default=2023, 
+    year = models.IntegerField(default=2023,
                                validators=[
                                 MaxValueValidator(2026),
                                 MinValueValidator(2005)
-                            ])
+                                ])
     top_speed = models.IntegerField(default=100,
         validators=[
             MaxValueValidator(400),
             MinValueValidator(50)
-        ])
+            ])
     FUEL_TYPES = [
         ('GASOLINE', 'Gasoline'),
         ('ELECTRIC', 'Electric'),
