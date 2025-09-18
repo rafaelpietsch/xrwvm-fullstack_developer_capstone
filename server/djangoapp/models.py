@@ -35,10 +35,10 @@ class CarModel(models.Model):
                                 MinValueValidator(2005)
                                 ])
     top_speed = models.IntegerField(default=100,
-        validators=[
-            MaxValueValidator(400),
-            MinValueValidator(50)
-            ])
+                                    validators=[
+                                     MaxValueValidator(400),
+                                     MinValueValidator(50)
+                                     ])
     FUEL_TYPES = [
         ('GASOLINE', 'Gasoline'),
         ('ELECTRIC', 'Electric'),
